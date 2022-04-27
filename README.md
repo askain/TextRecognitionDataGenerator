@@ -225,3 +225,29 @@ If anything is missing, unclear, or simply not working, open an issue on the rep
 - Better background generation
 - Better handwritten text generation
 - More customization parameters (mostly regarding background)
+
+
+# TextRecognitionDataGenerator - K-food
+
+Add in `launch.json` for Vscode
+```
+{
+    "name": "trdg/run.py",
+    "type": "python",
+    "request": "launch",
+    "program": "trdg/run.py",
+    "console": "integratedTerminal",
+    "justMyCode": true,
+    "args": [
+        "-f", "64", // height
+        "-k", "5", "-rk", // curved word + random curve
+        // "-b", // add background
+        "--font_dir", "./trdg/fonts/ko",
+        "--dict", "./trdg/dicts/ko-test.txt",
+        "--output_dir", "/home/roctree/workspaces/EasyOCR/trainer/all_data/ko_train_filtered",
+        // "--output_dir", "/home/roctree/workspaces/EasyOCR/trainer/all_data/ko_val",
+        "--name_format", "2",
+        "-c", "10"
+    ]
+}
+```
